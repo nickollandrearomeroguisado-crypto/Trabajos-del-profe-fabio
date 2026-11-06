@@ -20,13 +20,13 @@ class PostController
         // $posts = DB::table('posts')->get(); //para iniciar la conexion a la base de datos
         // $posts = DB::raw('SELECT * FROM posts WHERE'); //para consultas en la bases de datos
         $posts = Post::get(); //la forma correcta de hacer la conexion a la base de datos
-        return view('blog', [
+        return view('posts.index', [
             'posts' => $posts
             // 'ejemplo' => $ejemplo
         ]);
     }
 
-    public function show(Post $post) {
+    public function show(Post $post) { 
         // return "Vista show posts";
         // return $post;
         // return Post::find($post);
@@ -35,6 +35,16 @@ class PostController
         return view('posts.show', [
             'post' => $post
         ]);
+    }
+
+    public function create() {
+        // return "Creando archivo...";
+        return view('posts.create');
+    }
+
+    public function store() {
+        return "Almacenando post...";
+        // return redirect()->route('posts.create')->with('mensaje', 'Almacenando post...'); //redirect envia al usuario una url o pagina a otra
     }
 }
 

@@ -30,9 +30,13 @@ use Illuminate\Support\Facades\Route;
 //Ruta de la conexion de controller
 Route::view('/', 'welcome');
 
-Route::get('/blog', [PostController::class, 'index'])->name('blog'); //redenrizar informacion principal
+Route::get('/blog', [PostController::class, 'index'])->name('posts.index'); //redenrizar informacion principal
 
-Route::get('/blog/{post}', [PostController::class, 'show']); //para mostrar informacion especifica, {} es un variable que puede ser recibida en el controller
+Route::get('/blog/create', [PostController::class, 'create'])->name('posts.create');
+
+Route::post('/blog', [PostController::class, 'store'])->name('posts.store');
+
+Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show'); //para mostrar informacion especifica, {} es un variable que puede ser recibida en el controller
 
 // Route::get('/', function () {
 //     return view('welcome');

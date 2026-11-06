@@ -5,9 +5,9 @@
 @endcomponent --}}
 
 <x-layout meta-tittle="Home Tittle" meta-description="Home Description">
-    {{-- <x-slot name="sidebar">
+    <x-slot name="sidebar">
         Hola Sidebar
-    </x-slot> --}}
+    </x-slot>
     {{-- <x-slot name="metaTittle">
         Home Tittle
     </x-slot> --}}
